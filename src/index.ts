@@ -1,11 +1,12 @@
 import express from "express";
 
-const app = express();
-const PORT = 1111;
-app.get("/", (req, res) => {
-    res.send("Hello world");
-});
+const app = express()
+const port = 1111
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`)
+app.get('/', (req, res) => {
+	res.send('Hello World!')
+})
+
+app.listen(port, () => {
+	console.log(`Example app listening on port ${port}`)
 })
