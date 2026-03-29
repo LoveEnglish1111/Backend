@@ -1,5 +1,5 @@
 const UserSchema = require("../models/User");
-import { Router, Response } from 'express';
+import { Response } from 'express';
 
 function error(res : Response, statusCode : number, message : string, At : string) {
     res.status(statusCode);
@@ -35,11 +35,11 @@ class authController {
 
         const user = await UserSchema.findOne({"email" : Email, "password" : Password});
         if (user == null) {
-            error(res, 400, "Incorrect Email or Password","Password");
+            error(res, 400, "Incorrect Email or Password","Both");
             return;
         }
 
-        return res.send("Hello world");
+        return res.send(user);
     }
 };
 
