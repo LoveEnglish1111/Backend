@@ -4,11 +4,11 @@ import cors from "cors";
 const route = require("./routes");
 const db = require("./config/db");
 
-db.connect();
 const app = express();
 
 // Routes init
 app.use(cors());
+db.connect();
 route(app);
 
 app.listen(config.port, () => {

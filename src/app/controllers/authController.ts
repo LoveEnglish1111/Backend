@@ -1,14 +1,10 @@
-const User = require("../models/User.ts");
+const UserSchema = require("../models/User");
+
 class authController {
     // [GET]
     async index(req, res) {
-        try {
-            const users = await User.find({});
-            res.json(users);
-            // res.send("Hello world");
-        } catch (err) {
-            res.status(500).json(err);
-        }
+        const user = await UserSchema.find({});
+        res.send(user);
     }
 };
 
