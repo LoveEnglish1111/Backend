@@ -1,13 +1,17 @@
 import express from "express";
-const cors = require("cors");
+import config from "./config";
+import cors from "cors";
 const route = require("./routes");
+const db = require("./config/db");
+
+db.connect();
 
 const app = express();
-const port = 1111;
 
 // Routes init
 app.use(cors());
 route(app);
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+
+app.listen(config.port, () => {
+	console.log(`Example app listening on port ${config.port}`);
 });
