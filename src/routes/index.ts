@@ -1,9 +1,9 @@
 const studySets = require("./studySetsRouter.ts");
-const siteRouter = require("./siteRouter")
+const auth = require("./auth.ts")
 
 function route(app) {
+    app.use("/auth", auth);
     app.use("/StudySets", studySets);
-    app.use("/site",siteRouter);
 }
 
 module.exports = route;
