@@ -1,4 +1,3 @@
-// const UserSchema = require("../models/User");
 const { LearningHistory, Achievement } = require("../models/profile");
 import { Response } from 'express';
 
