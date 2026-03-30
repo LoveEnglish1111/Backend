@@ -7,7 +7,9 @@ const UserSchema = new Schema({
     password : {type : String, required: true},
     avatar : {type : String, required : true},
     role : {type : String, required : true},
-    level : {type : String, required : true}
+    level : {type : String, required : true},
+    bio : {type : String, required : true},
+    joinDate: { type: String, required : true }
 });
 
 module.exports = mongoose.model("User", UserSchema, "User");

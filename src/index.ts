@@ -9,6 +9,7 @@ const app = express();
 // Routes init
 app.use(cors());
 db.connect();
+app.use(express.json());
 route(app);
 
 app.listen(config.port, () => {
