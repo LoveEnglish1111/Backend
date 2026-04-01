@@ -31,6 +31,12 @@ class StudySetsController {
         )
         res.send(result);
     }
+
+    async deleteStudySet(req: Request, res: Response) {
+        const flashCard_id = req.query.flashCard_id;
+        await StudysetsSchema.deleteOne({_id : flashCard_id})
+        res.send("Success");
+    }
 };
 
 module.exports = new StudySetsController;

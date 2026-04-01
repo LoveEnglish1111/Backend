@@ -38,6 +38,10 @@ class vocabularyController {
     // [DELETE]
     async deleteVocabulary(req: Request, res: Response) {
         const flashCard_id = req.query.flashCard_id;
+        await vocabularySchema.deleteOne({
+            flashCard_id : flashCard_id
+        })
+        res.send("Success");
     }
 };
 
