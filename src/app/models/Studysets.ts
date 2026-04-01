@@ -9,6 +9,7 @@ const StudysetsSchema = new Schema({
     total: {type : Number, required : true},
     learned: {type : Number, required : true},
     reviews: {type : Number, required : true},
+    visibility : {type : String, required : true}
 });
 
 module.exports = mongoose.model("Studysets", StudysetsSchema,"studySets");

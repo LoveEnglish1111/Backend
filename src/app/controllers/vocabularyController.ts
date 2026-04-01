@@ -6,6 +6,16 @@ class vocabularyController {
     // [POST]
     async createVocabulary(req: Request, res: Response) {
         const flashCard_id = req.query.flashCard_id;
+        const newVocabularyData = req.body.newVocabularyData;
+        const total = req.body.total;
+        const MarkLearned = "0".repeat(total);
+        const data = await vocabularySchema.create({
+            flashCard_id : flashCard_id,
+            Vocabulary : newVocabularyData,
+            MarkLearned : MarkLearned
+        });
+
+        res.send(data);
     }
     
     // [GET]
