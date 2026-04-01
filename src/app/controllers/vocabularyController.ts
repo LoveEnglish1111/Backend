@@ -1,13 +1,33 @@
 // const StudysetsSchema = require("../models/Studysets");
 const vocabularySchema = require("../models/Vocabulary")
-import { Response } from 'express';
+import { Response, Request } from 'express';
 
 class vocabularyController {
-    // [GET]
-    async index(req : Response, res) {
+    // [POST]
+    async createVocabulary(req: Request, res: Response) {
         const flashCard_id = req.query.flashCard_id;
-        const Data = await vocabularySchema.find({flashCard_id : flashCard_id});
+    }
+    
+    // [GET]
+    async getVocabulary(req: Request, res: Response) {
+        const flashCard_id = req.query.flashCard_id;
+        const Data = await vocabularySchema.findOne({flashCard_id : flashCard_id});
         res.send(Data);
+    }
+
+    // [PUT]
+    async updateVocabulary(req: Request, res: Response) {
+        const newVocabularyData = req.body;
+        const result = await vocabularySchema.updateOne(
+            {_id : newVocabularyData._id},
+            newVocabularyData
+        )
+        res.send(result);
+    }
+
+    // [DELETE]
+    async deleteVocabulary(req: Request, res: Response) {
+        const flashCard_id = req.query.flashCard_id;
     }
 };
 

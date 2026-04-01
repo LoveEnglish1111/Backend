@@ -16,7 +16,6 @@ class authController {
         const isValidEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
         const Email : string = req.query.email;
         const Password : string = req.query.password;
-        
         if (!Email.trim()) {
             error(res, 400, "Email is required", "Email");
             return;
@@ -38,7 +37,6 @@ class authController {
             error(res, 400, "Incorrect Email or Password","Both");
             return;
         }
-
         return res.send(user);
     }
 
