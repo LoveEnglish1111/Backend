@@ -28,6 +28,7 @@ class vocabularyController {
     // [PUT]
     async updateVocabulary(req: Request, res: Response) {
         const newVocabularyData = req.body;
+        console.log(newVocabularyData);
         const result = await vocabularySchema.updateOne(
             {_id : newVocabularyData._id},
             newVocabularyData
